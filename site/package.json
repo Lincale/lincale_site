@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "npm run build && npm run start"
+    "export": "next export",
+    "deploy": "yarn run build && yarn run export"
   },
   "dependencies": {
     "date-fns": "^2.16.1",

@@ -10,8 +10,10 @@
     "deploy": "yarn run build && yarn run export"
   },
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
+    "linaria": "2.0.0-rc.3",
     "next": "9.5.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",

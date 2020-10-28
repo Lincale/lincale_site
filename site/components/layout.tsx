@@ -1,26 +1,17 @@
-import Head from 'next/head'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import { clickableName, divContainer, layoutHeader, headerHomeImage, nameInHome, headerImage, colorInherit, backToHome } from './LinaliaCSS';
+import Head from 'next/head';
+import Link from 'next/link';
 
-const name = 'Linca'
-export const siteTitle = 'Next.js Website'
+const name = 'Linca';
+const profileIconPath = '/images/profile.png';
+export const siteTitle = 'Linca Website';
 
-export default function Layout({
-  children,
-  home
-}: {
-  children: React.ReactNode
-  home?: boolean
-}) {
+export default function Layout({ children, home }: { children: React.ReactNode; home?: boolean }) {
   return (
-    <div className={styles.container}>
+    <div className={divContainer}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
+        <meta name="description" content="Linca\'s biography" />
         <meta
           property="og:image"
           content={`https://og-image.now.sh/${encodeURI(
@@ -30,43 +21,35 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header className={layoutHeader}>
         {home ? (
           <>
-            <img
-              src="/images/profile.png"
-              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <img src={profileIconPath} className={headerHomeImage} alt={name} />
+            <h1 className={nameInHome}>{name}</h1>
           </>
         ) : (
           <>
             <Link href="/">
               <a>
-                <img
-                  src="/images/profile.png"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                  alt={name}
-                />
+                <img src={profileIconPath} className={headerImage} alt={name} />
               </a>
             </Link>
-            <h2 className={utilStyles.headingLg}>
+            <a className={clickableName}>
               <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
+                <a className={colorInherit}>{name}</a>
               </Link>
-            </h2>
+            </a>
           </>
         )}
       </header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div className={backToHome}>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
         </div>
       )}
     </div>
-  )
+  );
 }

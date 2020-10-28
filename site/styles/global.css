@@ -17,7 +17,12 @@ a {
 }
 
 a:hover {
+  color: indigo;
   text-decoration: underline;
+}
+
+a:focus {
+  color: indigo;
 }
 
 img {

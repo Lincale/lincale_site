@@ -1,4 +1,4 @@
-import { clickableName, divContainer, layoutHeader, headerHomeImage, nameInHome, headerImage, colorInherit, backToHome } from './LinaliaCSS';
+import { clickableName, divContainer, layoutHeader, borderRadius, nameInHome, colorInherit, backToHome } from './LinaliaCSS';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image'
@@ -25,14 +25,14 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
       <header className={layoutHeader}>
         {home ? (
           <>
-            <Image src={profileIconPath} alt={name} width="250" height="250" border-radius="9999px"/>
+            <Image src={profileIconPath} alt={name} width="250" height="250" className={borderRadius}/>
             <h1 className={nameInHome}>{name}</h1>
           </>
         ) : (
           <>
             <Link href="/">
               <a>
-                <Image src={profileIconPath} alt={name} width="200" height="200" border-radius="9999px"/>
+                <Image src={profileIconPath} alt={name} width="200" height="200" className={borderRadius}/>
               </a>
             </Link>
             <a className={clickableName}>

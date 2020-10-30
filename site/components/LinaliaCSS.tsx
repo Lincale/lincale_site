@@ -69,14 +69,6 @@ export const colorInherit = css`
   color: inherit;
 `
 
-export const headerHomeImage = css`
-  width: 8rem;
-  height: 8rem;
-  border-radius: 9999px;
-`
-
-export const headerImage = css`
-  width: 6rem;
-  height: 6rem;
+export const borderRadius = css`
   border-radius: 9999px;
 `
